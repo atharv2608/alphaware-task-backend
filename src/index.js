@@ -5,13 +5,11 @@ import app from "./app.js";
 dotenv.config({
     path: "./.env"
 })
-
+app.get("/", (req, res)=>{
+    res.send("<h1>Jobs Api</h1>")
+})
 connection()
 .then(()=>{
-    app.get("/", (req, res)=>{
-        res.send("<h1>Jobs Api</h1>")
-    })
-
     app.listen(process.env.PORT || 3000, ()=>{
         console.log("App is running on port: ", process.env.PORT);
     })
