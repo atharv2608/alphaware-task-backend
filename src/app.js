@@ -8,7 +8,8 @@ const corsOptions = {
     origin: [,
        'http://localhost:5173',
        'https://localhost:5173',
-       '*'
+       'https://alphaware-task-frontend.vercel.app',
+       'https://alphaware-task-frontend.vercel.app/*',
      ],
      methods: ["POST", "GET", "PUT", "DELETE"],
      credentials: true, // Allow cookies across domains if needed (for authentication)
