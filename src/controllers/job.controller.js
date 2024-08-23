@@ -131,10 +131,10 @@ const applyJob = asyncHandler(async (req, res) => {
     if (req.isAdmin) return apiError(res, 401, "Admin account cannot apply");
     const user = req?.user;
 
-    const { jobId } = req.body;
+    const { jobId, resumeURL } = req.body;
 
-    // Validate that jobId is provided
-    if (!jobId) return apiError(res, 400, "All details are required");
+    // Validate that jobId and resumeURL is provided
+    if (!jobId || !resumeURL) return apiError(res, 400, "All details are required");
     
     // Find the job by ID
     const job = await Job.findById(jobId);
@@ -158,7 +158,8 @@ const applyJob = asyncHandler(async (req, res) => {
       applicantId: user?._id,
       applicantName: `${user.firstName} ${user.lastName}`,
       email: user?.email,
-      phone: user?.phone
+      phone: user?.phone,
+      resumeURL,
     });
     await job.save();
 

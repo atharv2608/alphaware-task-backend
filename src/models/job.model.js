@@ -46,6 +46,7 @@ const jobSchema = new Schema(
                 resumeURL:{
                     type:String,
                     trim: true,
+                    required: true,
                     default: "https://morth.nic.in/sites/default/files/dd12-13_0.pdf"
                 },
                 dateApplied: {
