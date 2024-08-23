@@ -1,3 +1,4 @@
+// Function to generate a JWT access token with a user ID payload
 import jwt from "jsonwebtoken"
 
 const generateAccessToken = (userId) => {

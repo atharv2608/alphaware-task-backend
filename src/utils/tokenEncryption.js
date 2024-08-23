@@ -1,3 +1,5 @@
+// Functions to encrypt and decrypt tokens using AES encryption
+
 import CryptoJS from "crypto-js";
 
 const encryptToken = (token, secretKey) =>{

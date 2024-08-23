@@ -1,3 +1,4 @@
+// Class to standardize API responses with status code, data, and message
 class ApiResponse {
     constructor(statusCode, data, message="Success"){
         this.statusCode = statusCode

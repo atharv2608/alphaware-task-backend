@@ -1,5 +1,5 @@
 import mongoose, {Schema} from "mongoose";
-
+// Define the schema for the Job model
 const jobSchema = new Schema(
     {
         companyName:{
